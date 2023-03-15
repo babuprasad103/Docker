@@ -7,7 +7,8 @@ url = 'https://www.imdb.com/chart/top'
 def main():
   response = requests.get(url)
   html = response.text
-
+  
+  print(html)
   soup = BeautifulSoup(html, 'html.parser')
   movietags = soup.select('td.titleColumn') 
   inner_movietags = soup.select('td.titleColumn a')
